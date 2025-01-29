@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  },
+  "scripts": {
+    "dev": "npx tailwindcss -i ./scss/tailwind.css -o --watch"
+  },
+  "dependencies": {
+    "@fancyapps/ui": "^5.0.3"
+  
+  }
+}
