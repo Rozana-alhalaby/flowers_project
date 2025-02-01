@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "@fancyapps/ui/dist/carousel/carousel.css";
+
+
+  .main-container{
+    max-width: 1800px;
+    padding-left:60px;
+    padding-right: 60px;
+  }
+  
+  .main-title{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+    font-size:1.7rem;
+  }
+.text-paragraph{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, 'Arial Narrow', Arial, sans-serif;
+  font-weight: 400;
+  font-size:0.9rem;
+}
+
+.f-carousel{
+  --f-carousel-spacing:20px!important;
+  .f-carousel__viewport{
+    width: 100%;
+     .f-carousel__track{
+ 
+         .f-carousel__slide {
+             width: calc((100% - 60px) / 4)!important; 
+             @media  screen and (max-width:768px) {
+              width: 100%!important; 
+             }
+         }
+     }
+  }
+}
+.helloo{
+  .h1d{
+    color:red;
+  }
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .cart-items {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item h3 {
+            margin: 0;
+        }
+
+        .cart-item .remove-item {
+            color: red;
+            cursor: pointer;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .checkout-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .empty-cart {
+            text-align: center;
+            font-size: 18px;
+            padding: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Your Cart</h1>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be populated here -->
+        </div>
+        <button class="checkout-btn" id="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+    </div>
+
+    <script>
+        // Get the cart items from localStorage or initialize it to an empty array if it's not available
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Function to render the cart items on the page
+        function displayCartItems() {
+            const cartItemsContainer = document.getElementById('cart-items');
+
+            // Clear previous cart content
+            cartItemsContainer.innerHTML = '';
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `<p class="empty-cart">Your cart is empty.</p>`;
+                document.getElementById('checkout-btn').disabled = true; // Disable checkout if cart is empty
+            } else {
+                document.getElementById('checkout-btn').disabled = false; // Enable checkout if there are items
+                cart.forEach((item, index) => {
+                    const cartItemElement = document.createElement('div');
+                    cartItemElement.classList.add('cart-item');
+                    cartItemElement.innerHTML = `
+                        <div>
+                            <h3>${item.name} - $${item.price}</h3>
+                        </div>
+                        <div>
+                            <button class="remove-item" onclick="removeFromCart(${index})">Remove</button>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(cartItemElement);
+                });
+            }
+        }
+
+        // Function to remove an item from the cart
+        function removeFromCart(index) {
+            cart.splice(index, 1); // Remove item at the given index
+            localStorage.setItem('cart', JSON.stringify(cart)); // Update the cart in localStorage
+            displayCartItems(); // Re-render the cart
+        }
+
+        // Function to proceed to checkout (you can replace this with actual checkout logic)
+        function checkout() {
+            alert('Proceeding to checkout...');
+            // Redirect to the checkout page (replace with your actual checkout URL)
+            window.location.href = 'checkout.html';
+        }
+
+        // Initial display of cart items
+        displayCartItems();
+    </script>
+</body>
+
+</html>
