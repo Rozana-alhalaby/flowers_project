@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/css/styles.css" rel="stylesheet" />
-    <link href="/css/output.css" rel="stylesheet" />
+    <link href="/dist/output.css" rel="stylesheet" />
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
     <link
@@ -17,13 +17,11 @@
   </head>
   <body>
     <div>
-      <header
-        class="shadow-md bg-white font-[sans-serif] tracking-wide relative z-50"
-      >
+      <header class="shadow-md bg-white fixed top-0 left-0 w-full z-50">
         <section
-          class="flex items-center flex-wrap lg:justify-center gap-4 py-2.5 sm:px-10 px-4 border-gray-200 border-b min-h-[70px]"
+          class="flex items-center flex-wrap lg:justify-center gap-4  sm:px-10 px-4 border-gray-200 border-b min-h-[60px]"
         >
-          <a href="javascript:void(0)">
+          <a href="index.html">
             <svg
               width="200"
               height="100"
@@ -94,7 +92,7 @@
           </a>
 
           <div
-            class="lg:absolute lg:right-10 flex items-center ml-auto space-x-8"
+            class="lg:absolute lg:right-10 flex items-center ml-auto gap-x-7"
           >
             <span class="relative">
               <svg
@@ -149,44 +147,14 @@
             </div>
           </div>
         </section>
-
-        <div class="flex flex-wrap justify-center px-10 py-3 relative">
+        <div class="flex items-center main-container py-3 relative">
           <div
             id="collapseMenu"
-            class="max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-40 max-lg:before:inset-0 max-lg:before:z-50"
+            class="max-lg:hidden lg:!block flex justify-center flex-grow max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-40 max-lg:before:inset-0 max-lg:before:z-50"
           >
-            <button
-              id="toggleClose"
-              class="lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white w-9 h-9 flex items-center justify-center border"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-3.5 h-3.5 fill-black"
-                viewBox="0 0 320.591 320.591"
-              >
-                <path
-                  d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
-                  data-original="#000000"
-                ></path>
-                <path
-                  d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
-                  data-original="#000000"
-                ></path>
-              </svg>
-            </button>
-
             <ul
               class="lg:flex lg:gap-x-10 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-2/3 max-lg:min-w-[280px] max-lg:top-0 max-lg:left-0 max-lg:p-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50"
             >
-              <li class="max-lg:border-b max-lg:pb-4 px-3 lg:hidden">
-                <a href="javascript:void(0)"
-                  ><img
-                    src="https://readymadeui.com/readymadeui.svg"
-                    alt="logo"
-                    class="w-36"
-                  />
-                </a>
-              </li>
               <li class="max-lg:border-b max-lg:px-3 max-lg:py-3">
                 <a
                   href="occasions.html"
@@ -214,8 +182,9 @@
                     />
                   </svg>
                 </a>
+
                 <ul
-                  class="absolute top-5 max-lg:top-8 left-0 z-50 block space-y-2 shadow-lg bg-white max-h-0 overflow-hidden h-[700px] min-w-[230px] group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-[400ms]"
+                  class="absolute top-5 max-lg:top-8 left-0 z-50 block space-y-2 shadow-lg bg-white max-h-0 overflow-hidden min-w-[230px] group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-[400ms]"
                 >
                   <li class="border-b py-3">
                     <a
@@ -240,7 +209,7 @@
 
                   <li class="border-b py-3">
                     <a
-                      href="javascript:void(0)"
+                      href="packages.html"
                       class="hover:text-[#007bff] hover:fill-[#007bff] text-gray-800 text-[15px] flex items-center"
                     >
                       <svg
@@ -270,7 +239,16 @@
             </ul>
           </div>
 
-          <div id="toggleOpen" class="flex ml-auto lg:hidden">
+          <a href="contact-us.html" class="ml-auto">
+            <button
+              type="button"
+              class="rounded-sm !bg-gray-700 max-w-56 px-4 py-3 text-sm font-medium text-white transition hover:scale-105"
+            >
+              Contact Us
+            </button>
+          </a>
+
+          <div id="toggleOpen" class="flex lg:hidden">
             <button>
               <svg
                 class="w-7 h-7"
