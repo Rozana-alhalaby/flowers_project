@@ -267,7 +267,7 @@
         </div>
       </header>
       <div class="page">
-        <form class="main-container h-full mt-24">
+        <div class="main-container h-full mt-24">
           <div class="flex items-center justify-center">
             <div
               class="bg-gray-700 p-8 mt-24 rounded-lg shadow-md w-full min-h-full flex flex-col gap-y-5"
@@ -276,16 +276,16 @@
                 Get in Touch
               </h1>
 
-              <form
-                action="https://fabform.io/f/7Dttd4P"
+              <form name="addRegistration" id="addRegistration"
+               
                 method="POST"
                 class="flex flex-col gap-y-4"
               >
                 <div class="flex items-center">
                   <input
                     type="text"
-                    id="name"
-                    name="name"
+                    id="full_name"
+                    name="full_name"
                     class="flex-1 p-4 border border-gray-600 rounded focus:outline-none focus:border-blue-500"
                     placeholder="Your Name"
                   />
@@ -322,7 +322,7 @@
               </form>
             </div>
           </div>
-        </form>
+        </div>
         <footer>
           <div class="main-container bg-gray-500 pt-5 justify-between">
             <svg
