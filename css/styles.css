@@ -38,6 +38,15 @@
   .f-carousel__dots{
     padding-top: 20px !important;
   }
+  .f-carousel__nav .f-button.is-prev{
+    @apply shadow-box !top-[25%] !translate-y-[25%] text-sm hover:bg-gradient-to-r hover:text-white  from-customBlue to-customPurple;
+  }
+  .f-carousel__nav .f-button svg{
+        @apply w-4;
+    }
+  .f-carousel__nav .f-button.is-next{
+    @apply shadow-box !top-[25%] !translate-y-[25%] hover:bg-gradient-to-r hover:text-white  from-customBlue to-customPurple;
+  }
 }
 .page{
   display: flex;

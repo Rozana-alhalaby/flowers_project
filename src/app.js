@@ -1,20 +1,29 @@
-import { Carousel } from "@fancyapps/ui/dist/carousel/carousel.esm.js";
-import "@fancyapps/ui/dist/carousel/carousel.css";
 
-import "./css/styles.css";
-const container = document.getElementById("myCarousel");
-const options = { infinite: false };
+document.addEventListener("DOMContentLoaded", function () {
+    let form = document.getElementById("addRegistration");
+  
 
-new Carousel(container, options);
-
-window.onload = function(){
-document.getElementById("addRegistration").addEvenetListener("submit",
-  (event) => {
-    event.preventDefault()
-    full_name = document.addRegistration.full_name.value
-    email =  document.addRegistration.email.value
-    message =  document.addRegistration.message.value
-
-   })
-}
-
+  
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); 
+  
+  
+      let fullName = document.getElementById("full_name").value;
+      let email = document.getElementById("email").value;
+      let message = document.getElementById("message").value;
+  
+      if (!fullName || !email || !message) {
+        alert("⚠️ Please fill in all fields!");
+        return;
+      }
+  
+      let formData = { fullName, email, message };
+  
+      localStorage.setItem("registrationData", JSON.stringify(formData));
+  // JSON.stringify(formData) converts the object into a string, since localStorage only stores strings.
+      alert("✅ Your data has been saved!"); 
+  
+      form.reset();
+    });
+  });
+  

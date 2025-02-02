@@ -7,19 +7,16 @@
     <link href="/css/styles.css" rel="stylesheet" />
     <link href="/dist/output.css" rel="stylesheet" />
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css"
-    />
-    <link href="app.js" />
+   
+    <script defer src="./app.js"></script>
+
     <title>Flowers Shop</title>
   </head>
   <body>
     <div>
       <header class="shadow-md bg-white fixed top-0 left-0 w-full z-50">
         <section
-          class="flex items-center flex-wrap lg:justify-center gap-4  sm:px-10 px-4 border-gray-200 border-b min-h-[60px]"
+          class="flex items-center flex-wrap lg:justify-center gap-4 sm:px-10 px-4 border-gray-200 border-b min-h-[60px]"
         >
           <a href="index.html">
             <svg
@@ -276,9 +273,10 @@
                 Get in Touch
               </h1>
 
-              <form name="addRegistration" id="addRegistration"
-               
-                method="POST"
+              <form
+                name="addRegistration"
+                id="addRegistration"
+              
                 class="flex flex-col gap-y-4"
               >
                 <div class="flex items-center">
@@ -439,5 +437,6 @@
         </footer>
       </div>
     </div>
+    <script src="app.js" type="module"defer></script>
   </body>
 </html>
