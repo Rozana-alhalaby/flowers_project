@@ -7,7 +7,7 @@
     <link href="/css/styles.css" rel="stylesheet" />
     <link href="/dist/output.css" rel="stylesheet" />
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-   
+
     <script defer src="./app.js"></script>
 
     <title>Flowers Shop</title>
@@ -109,7 +109,7 @@
                 >1</span
               >
             </span>
-            <span class="relative">
+            <a href="cart.html" class="relative">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20px"
@@ -123,10 +123,14 @@
                 ></path>
               </svg>
               <span
+                id="cart-counter"
                 class="absolute left-auto -ml-1 top-0 rounded-full bg-blue-600 px-1 py-0 text-xs text-white"
-                >4</span
+                style="display: none"
               >
-            </span>
+                0
+              </span>
+            </a>
+
             <div class="inline-block cursor-pointer border-gray-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -276,7 +280,6 @@
               <form
                 name="addRegistration"
                 id="addRegistration"
-              
                 class="flex flex-col gap-y-4"
               >
                 <div class="flex items-center">
@@ -437,6 +440,6 @@
         </footer>
       </div>
     </div>
-    <script src="app.js" type="module"defer></script>
+    <script src="app.js" type="module" defer></script>
   </body>
 </html>
