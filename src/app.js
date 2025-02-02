@@ -12,10 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
       let email = document.getElementById("email").value;
       let message = document.getElementById("message").value;
   
-      if (!fullName || !email || !message) {
-        alert("⚠️ Please fill in all fields!");
-        return;
-      }
   
       let formData = { fullName, email, message };
   
@@ -23,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // JSON.stringify(formData) converts the object into a string, since localStorage only stores strings.
       alert("✅ Your data has been saved!"); 
   
-      form.reset();
     });
   });
   
